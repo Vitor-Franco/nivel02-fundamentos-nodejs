@@ -15,10 +15,14 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
-    const { total: compareBalance } = this.transactionsRepository.getBalance();
+    const { total } = this.transactionsRepository.getBalance();
 
-    if (compareBalance < value && type !== 'income') {
-      throw Error('Your Balance is insufficient');
+    if (!['income', 'outcome'].includes(type)) {
+      throw new Error('Transactions type is invalid');
+    }
+
+    if (total < value && type !== 'income') {
+      throw new Error('Your Balance is insufficient');
     }
 
     const transaction = this.transactionsRepository.create({
