@@ -21,13 +21,13 @@ class CreateTransactionService {
       throw Error('Your Balance is insufficient');
     }
 
-    const appointment = this.transactionsRepository.create({
+    const transaction = this.transactionsRepository.create({
       title,
       value,
       type,
     });
 
-    return appointment;
+    return transaction;
   }
 }
 
