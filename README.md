@@ -19,9 +19,9 @@ Na rota de GET, podemos listar todas transações e não menos importante, um ba
 
 Para que o desafio seja dado como **finalizado**, temos alguns testes presentes. Dentre estes:
 
--**`should be able to create a new transaction`**.
--**`should be able to list the transactions`**.
--**`should not be able to create outcome transaction without a valid balance`**.
+- **`should be able to create a new transaction`**.
+- **`should be able to list the transactions`**.
+- **`should not be able to create outcome transaction without a valid balance`**.
 
 ### Conclusão
 
